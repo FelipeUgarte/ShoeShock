@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CBA8D5F28413C1D006450ED /* HeroBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D5E28413C1D006450ED /* HeroBannerCell.swift */; };
+		0CBA8D6128414228006450ED /* ShoeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D6028414228006450ED /* ShoeModel.swift */; };
+		0CBA8D63284142F3006450ED /* SelectedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D62284142F3006450ED /* SelectedProduct.swift */; };
+		0CBA8D6528414412006450ED /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D6428414412006450ED /* ShoppingCart.swift */; };
+		0CBA8D682841634D006450ED /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D672841634D006450ED /* DataService.swift */; };
 		0CCA89C528402EB800657C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C428402EB800657C00 /* AppDelegate.swift */; };
 		0CCA89C728402EB800657C00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C628402EB800657C00 /* SceneDelegate.swift */; };
-		0CCA89C928402EB800657C00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C828402EB800657C00 /* ViewController.swift */; };
+		0CCA89C928402EB800657C00 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C828402EB800657C00 /* DiscoverVC.swift */; };
 		0CCA89CC28402EB800657C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCA89CA28402EB800657C00 /* Main.storyboard */; };
 		0CCA89CE28402EBA00657C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CCA89CD28402EBA00657C00 /* Assets.xcassets */; };
 		0CCA89D128402EBA00657C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCA89CF28402EBA00657C00 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CBA8D5E28413C1D006450ED /* HeroBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroBannerCell.swift; sourceTree = "<group>"; };
+		0CBA8D6028414228006450ED /* ShoeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeModel.swift; sourceTree = "<group>"; };
+		0CBA8D62284142F3006450ED /* SelectedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProduct.swift; sourceTree = "<group>"; };
+		0CBA8D6428414412006450ED /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		0CBA8D672841634D006450ED /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0CCA89C128402EB800657C00 /* ShoeShock-fuh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShoeShock-fuh.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCA89C428402EB800657C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CCA89C628402EB800657C00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CCA89C828402EB800657C00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CCA89C828402EB800657C00 /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		0CCA89CB28402EB800657C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CCA89CD28402EBA00657C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CCA89D028402EBA00657C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CBA8D6628416336006450ED /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				0CBA8D672841634D006450ED /* DataService.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
 		0CCA89B828402EB800657C00 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +76,42 @@
 			children = (
 				0CCA89C428402EB800657C00 /* AppDelegate.swift */,
 				0CCA89C628402EB800657C00 /* SceneDelegate.swift */,
-				0CCA89C828402EB800657C00 /* ViewController.swift */,
 				0CCA89CA28402EB800657C00 /* Main.storyboard */,
+				0CCA89DA28402F5E00657C00 /* View */,
+				0CCA89D928402F4D00657C00 /* Controller */,
+				0CCA89D828402F4500657C00 /* Model */,
+				0CBA8D6628416336006450ED /* DataService */,
 				0CCA89CD28402EBA00657C00 /* Assets.xcassets */,
 				0CCA89CF28402EBA00657C00 /* LaunchScreen.storyboard */,
 				0CCA89D228402EBA00657C00 /* Info.plist */,
 			);
 			path = "ShoeShock-fuh";
+			sourceTree = "<group>";
+		};
+		0CCA89D828402F4500657C00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CBA8D6028414228006450ED /* ShoeModel.swift */,
+				0CBA8D62284142F3006450ED /* SelectedProduct.swift */,
+				0CBA8D6428414412006450ED /* ShoppingCart.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CCA89D928402F4D00657C00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0CCA89C828402EB800657C00 /* DiscoverVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0CCA89DA28402F5E00657C00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CBA8D5E28413C1D006450ED /* HeroBannerCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CCA89C928402EB800657C00 /* ViewController.swift in Sources */,
+				0CCA89C928402EB800657C00 /* DiscoverVC.swift in Sources */,
+				0CBA8D63284142F3006450ED /* SelectedProduct.swift in Sources */,
 				0CCA89C528402EB800657C00 /* AppDelegate.swift in Sources */,
+				0CBA8D6128414228006450ED /* ShoeModel.swift in Sources */,
 				0CCA89C728402EB800657C00 /* SceneDelegate.swift in Sources */,
+				0CBA8D5F28413C1D006450ED /* HeroBannerCell.swift in Sources */,
+				0CBA8D6528414412006450ED /* ShoppingCart.swift in Sources */,
+				0CBA8D682841634D006450ED /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
