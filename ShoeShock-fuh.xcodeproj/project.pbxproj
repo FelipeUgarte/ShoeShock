@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C83006F284566C500D37949 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C83006E284566C500D37949 /* BrandsModel.swift */; };
+		0C8300712846518B00D37949 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8300702846518B00D37949 /* BrandCell.swift */; };
+		0C83007328466B2100D37949 /* MoreShoeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C83007228466B2100D37949 /* MoreShoeCell.swift */; };
 		0CBA8D5F28413C1D006450ED /* HeroBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D5E28413C1D006450ED /* HeroBannerCell.swift */; };
 		0CBA8D6128414228006450ED /* ShoeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D6028414228006450ED /* ShoeModel.swift */; };
 		0CBA8D63284142F3006450ED /* SelectedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D62284142F3006450ED /* SelectedProduct.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C83006E284566C500D37949 /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
+		0C8300702846518B00D37949 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
+		0C83007228466B2100D37949 /* MoreShoeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreShoeCell.swift; sourceTree = "<group>"; };
 		0CBA8D5E28413C1D006450ED /* HeroBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroBannerCell.swift; sourceTree = "<group>"; };
 		0CBA8D6028414228006450ED /* ShoeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeModel.swift; sourceTree = "<group>"; };
 		0CBA8D62284142F3006450ED /* SelectedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProduct.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 				0CBA8D6028414228006450ED /* ShoeModel.swift */,
 				0CBA8D62284142F3006450ED /* SelectedProduct.swift */,
 				0CBA8D6428414412006450ED /* ShoppingCart.swift */,
+				0C83006E284566C500D37949 /* BrandsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				0CBA8D5E28413C1D006450ED /* HeroBannerCell.swift */,
+				0C8300702846518B00D37949 /* BrandCell.swift */,
+				0C83007228466B2100D37949 /* MoreShoeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,13 +195,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CCA89C928402EB800657C00 /* DiscoverVC.swift in Sources */,
+				0C83006F284566C500D37949 /* BrandsModel.swift in Sources */,
 				0CBA8D63284142F3006450ED /* SelectedProduct.swift in Sources */,
 				0CCA89C528402EB800657C00 /* AppDelegate.swift in Sources */,
 				0CBA8D6128414228006450ED /* ShoeModel.swift in Sources */,
+				0C8300712846518B00D37949 /* BrandCell.swift in Sources */,
 				0CCA89C728402EB800657C00 /* SceneDelegate.swift in Sources */,
 				0CBA8D5F28413C1D006450ED /* HeroBannerCell.swift in Sources */,
 				0CBA8D6528414412006450ED /* ShoppingCart.swift in Sources */,
 				0CBA8D682841634D006450ED /* DataService.swift in Sources */,
+				0C83007328466B2100D37949 /* MoreShoeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
