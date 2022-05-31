@@ -15,6 +15,12 @@ class HeroBannerCell: UICollectionViewCell {
     @IBOutlet weak var love: UIButton!
     @IBOutlet weak var shoeImage: UIImageView!
     
+    
+    override func awakeFromNib() {
+        self.backgroundColor = UIColor(named: "HeroBannerGreen")
+        self.layer.cornerRadius = 10
+    }
+    
     func updateCell(shoes: Shoe) {
         brand.text = shoes.brand
         name.text = shoes.name

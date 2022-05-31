@@ -16,6 +16,10 @@ class MoreShoeCell: UICollectionViewCell {
     
 //    upcomingBT.titleLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
 
+    override func awakeFromNib() {
+        brandMoreShoe.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        self.layer.cornerRadius = 10
+    }
     func getMoreShoes(shoe: Shoe) {
         nameMoreShoe.text = shoe.name
         brandMoreShoe.text = shoe.brand

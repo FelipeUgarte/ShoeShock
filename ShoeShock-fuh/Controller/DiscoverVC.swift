@@ -9,9 +9,12 @@ import UIKit
 
 class DiscoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    // CollectionsViews
     @IBOutlet weak var brandCollectionView: UICollectionView!
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var moreShoesCollectionView: UICollectionView!
+    
+    // Buttons
     @IBOutlet weak var upcomingBT: UIButton!
     @IBOutlet weak var featured: UIButton!
     @IBOutlet weak var new: UIButton!
@@ -26,15 +29,18 @@ class DiscoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         moreShoesCollectionView.dataSource = self
         moreShoesCollectionView.delegate = self
         
+        // Rotate the text on the buttons
         upcomingBT.titleLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         featured.titleLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         new.titleLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         
     }
-    
+
         // MARK: - Table view data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // Iterate for each collectionView
         if collectionView == productCollectionView {
             return DataService.instance.getShoes().count
         } else if collectionView == moreShoesCollectionView {
@@ -46,6 +52,7 @@ class DiscoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        // Iterate for each collectionView
         if collectionView == productCollectionView {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShoeCell", for: indexPath) as? HeroBannerCell {
                 let shoe = DataService.instance.getShoes()[indexPath.row]
