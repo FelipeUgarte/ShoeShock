@@ -84,15 +84,12 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == productCollectionView {
-//            let cell =
-            
+            let cell = DataService.instance.getShoes()[indexPath]
+            performSegue(withIdentifier: "ShoeDetailVC", sender: cell)
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let shoe = DataService.instance.getShoes()[indexPath.row]
-        performSegue(withIdentifier: "ShoeDetailVC", sender: shoe)
-    }
+
 
 //    override func prepare(for segue: ShoeDetailVC, sender: Any?) {
 //        if let ShoeDetailVC = segue.description as? ShoeDetailVC {
