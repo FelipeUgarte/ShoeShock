@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiscoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     // CollectionsViews
     @IBOutlet weak var brandCollectionView: UICollectionView!
@@ -18,6 +18,8 @@ class DiscoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var upcomingBT: UIButton!
     @IBOutlet weak var featured: UIButton!
     @IBOutlet weak var new: UIButton!
+    
+    var selectedShoe = Shoe(name: "", brand: "", price: 0, shoeImage: "", shoeAditionalImages: [""])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,8 +79,26 @@ class DiscoverVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
         
         
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == productCollectionView {
+//            let cell =
+            
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let shoe = DataService.instance.getShoes()[indexPath.row]
+        performSegue(withIdentifier: "ShoeDetailVC", sender: shoe)
     }
 
+//    override func prepare(for segue: ShoeDetailVC, sender: Any?) {
+//        if let ShoeDetailVC = segue.description as? ShoeDetailVC {
+//            assert(sender as? ShoeModel != nil)
+//            ShoeDetailVC.init
+//    }
 
 }
 

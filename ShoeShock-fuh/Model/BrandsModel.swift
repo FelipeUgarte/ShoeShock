@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Brand {
+struct BrandModel {
     private(set) public var id = UUID()
     private(set) public var name: String
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SelectedProduct {
+class SelectedProductModel {
     
     var item: Shoe
     var cuantity: Int

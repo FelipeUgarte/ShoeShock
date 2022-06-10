@@ -11,7 +11,7 @@ class BrandCell: UICollectionViewCell {
     
     @IBOutlet weak var name: UILabel!
     
-    func updateBrandCell(brand: Brand) {
+    func updateBrandCell(brand: BrandModel) {
         name.text = brand.name
     }
 }

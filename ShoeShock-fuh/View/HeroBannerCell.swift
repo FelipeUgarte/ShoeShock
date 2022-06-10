@@ -17,7 +17,7 @@ class HeroBannerCell: UICollectionViewCell {
     
     
     override func awakeFromNib() {
-        self.backgroundColor = UIColor(named: "HeroBannerGreen")
+        self.backgroundColor = UIColor(named: "HeroBannerBG1")
         self.layer.cornerRadius = 10
     }
     
