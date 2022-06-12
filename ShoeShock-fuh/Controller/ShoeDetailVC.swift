@@ -22,10 +22,15 @@ class ShoeDetailVC: UIViewController {
     @IBOutlet weak var usa: UILabel!
     @IBOutlet weak var addToBagBT: UIButton!
     
-//    private(set) public var shoe = Shoe()
+    private(set) public var shoeToShow = Shoe(name: "", brand: "", price: 0, shoeImage: "", shoeAditionalImages: [""])
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        largeShoeImage.image = UIImage(named: shoeToShow.shoeImage)
+        name.text = shoeToShow.name
+        price.text = String(shoeToShow.price)
+        shoeDescription.text = "Description"
 
         moreDetailTitle.text = "MORE DETAILS"
         sizeText.text = "Size"
@@ -38,8 +43,7 @@ class ShoeDetailVC: UIViewController {
     }
     
     func initShoes(shoe: Shoe) {
-//        self.shoe = DataService.instance.getShoes()
-        
+        shoeToShow = shoe
+        navigationItem.title = shoeToShow.name
     }
-
 }

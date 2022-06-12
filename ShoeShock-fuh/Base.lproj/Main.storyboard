@@ -170,7 +170,7 @@
                                             <outlet property="name" destination="lMP-em-rWQ" id="AYf-CV-GTo"/>
                                             <outlet property="price" destination="4xf-2x-q0s" id="HCY-tX-JY8"/>
                                             <outlet property="shoeImage" destination="ZDp-XI-xrt" id="Iz2-Gm-OQl"/>
-                                            <segue destination="B3o-vs-88a" kind="show" id="lz1-N1-J0b"/>
+                                            <segue destination="B3o-vs-88a" kind="show" identifier="ShoeDetailSegue" id="lz1-N1-J0b"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

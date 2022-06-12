@@ -19,7 +19,8 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var featured: UIButton!
     @IBOutlet weak var new: UIButton!
     
-    var selectedShoe = Shoe(name: "", brand: "", price: 0, shoeImage: "", shoeAditionalImages: [""])
+//    var selectedShoe = Shoe(name: "", brand: "", price: 0, shoeImage: "", shoeAditionalImages: [""])
+    var selectedShoe = [Shoe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,25 +78,21 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
             }
             return BrandCell()
         }
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == productCollectionView {
-            let cell = DataService.instance.getShoes()[indexPath]
-            performSegue(withIdentifier: "ShoeDetailVC", sender: cell)
+            let cell = DataService.instance.getShoes()[indexPath.row]
+            performSegue(withIdentifier: "ShoeDetailSegue", sender: cell)
         }
     }
     
-
-
-//    override func prepare(for segue: ShoeDetailVC, sender: Any?) {
-//        if let ShoeDetailVC = segue.description as? ShoeDetailVC {
-//            assert(sender as? ShoeModel != nil)
-//            ShoeDetailVC.init
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ShoeDetailVC {
+            assert(sender as? Shoe != nil)
+            destination.initShoes(shoe: sender as! Shoe)
+        }
+    }
 
 }
 
