@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ShoeDetailVC: UIViewController {
-    
+class ShoeDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
     @IBOutlet weak var smallShoesImages: UICollectionView!
     @IBOutlet weak var sizes: UICollectionView!
     
@@ -45,5 +45,19 @@ class ShoeDetailVC: UIViewController {
     func initShoes(shoe: Shoe) {
         shoeToShow = shoe
         navigationItem.title = shoeToShow.name
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        DataService.instance.getSizes().count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StringSizeCell", for: indexPath) as? SizeCollectionViewCell {
+            let size = DataService.instance.getSizes()[indexPath.row]
+            cell.updateSizeCell(size: size)
+            return cell
+        }
+
+        return SizeCollectionViewCell()
     }
 }

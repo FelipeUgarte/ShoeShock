@@ -170,7 +170,6 @@
                                             <outlet property="name" destination="lMP-em-rWQ" id="AYf-CV-GTo"/>
                                             <outlet property="price" destination="4xf-2x-q0s" id="HCY-tX-JY8"/>
                                             <outlet property="shoeImage" destination="ZDp-XI-xrt" id="Iz2-Gm-OQl"/>
-                                            <segue destination="B3o-vs-88a" kind="show" identifier="ShoeDetailSegue" id="lz1-N1-J0b"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -308,6 +307,7 @@
                         <outlet property="new" destination="NHT-Wi-1kb" id="gI0-t7-NJl"/>
                         <outlet property="productCollectionView" destination="Gcu-VI-hye" id="i17-eg-wsw"/>
                         <outlet property="upcomingBT" destination="qtp-Kg-P1V" id="IlQ-hH-ifB"/>
+                        <segue destination="B3o-vs-88a" kind="show" identifier="ShoeDetailSegue" id="0tK-xK-Rg0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -446,7 +446,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WGM-cO-XsK" customClass="SizeCollectionViewCell" customModule="ShoeShock_fuh" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SizeCell" id="WGM-cO-XsK" customClass="SizeCollectionViewCell" customModule="ShoeShock_fuh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nDL-DX-VMk">
@@ -454,7 +454,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bry-sm-f0T" userLabel="Size">
-                                                    <rect key="frame" x="36.5" y="10" width="40" height="40"/>
+                                                    <rect key="frame" x="16" y="16" width="81" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="uvs-mo-U76"/>
                                                         <constraint firstAttribute="height" constant="40" id="xbh-lf-oLY"/>
@@ -465,8 +465,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bry-sm-f0T" secondAttribute="trailing" constant="16" id="4Tg-Fp-N0r"/>
+                                                <constraint firstAttribute="bottom" secondItem="bry-sm-f0T" secondAttribute="bottom" constant="16" id="6ny-np-TpN"/>
+                                                <constraint firstItem="bry-sm-f0T" firstAttribute="leading" secondItem="nDL-DX-VMk" secondAttribute="leading" constant="16" id="7rg-8C-uyD"/>
                                                 <constraint firstItem="bry-sm-f0T" firstAttribute="centerY" secondItem="nDL-DX-VMk" secondAttribute="centerY" id="OfN-Xf-IZQ"/>
                                                 <constraint firstItem="bry-sm-f0T" firstAttribute="centerX" secondItem="nDL-DX-VMk" secondAttribute="centerX" id="Tq7-JM-wCh"/>
+                                                <constraint firstItem="bry-sm-f0T" firstAttribute="top" secondItem="nDL-DX-VMk" secondAttribute="top" constant="16" id="sss-U5-xPf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="113" height="60"/>

@@ -112,13 +112,13 @@ class DataService {
     ]
     
     private let size: [SizeModel] = [
-        SizeModel(size: "7"),
-        SizeModel(size: "7.5"),
-        SizeModel(size: "8"),
-        SizeModel(size: "8.5"),
-        SizeModel(size: "9"),
-        SizeModel(size: "9.5"),
-        SizeModel(size: "10")
+        SizeModel(sizeNumber: "7"),
+        SizeModel(sizeNumber: "7.5"),
+        SizeModel(sizeNumber: "8"),
+        SizeModel(sizeNumber: "8.5"),
+        SizeModel(sizeNumber: "9"),
+        SizeModel(sizeNumber: "9.5"),
+        SizeModel(sizeNumber: "10")
     ]
     
     func getShoes() -> [Shoe] {

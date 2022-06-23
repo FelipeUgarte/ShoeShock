@@ -9,9 +9,9 @@ import Foundation
 
 struct SizeModel {
     var id = UUID()
-    var size: String
+    var sizeNumber: String
     
-    init(size: String) {
-        self.size = size
+    init(sizeNumber: String) {
+        self.sizeNumber = sizeNumber
     }
 }

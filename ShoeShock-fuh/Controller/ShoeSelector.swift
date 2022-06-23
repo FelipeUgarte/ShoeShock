@@ -80,14 +80,16 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == productCollectionView {
             let cell = DataService.instance.getShoes()[indexPath.row]
+            print("** Selected Show")
             performSegue(withIdentifier: "ShoeDetailSegue", sender: cell)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("** Preparing for segue")
         if let destination = segue.destination as? ShoeDetailVC {
             assert(sender as? Shoe != nil)
             destination.initShoes(shoe: sender as! Shoe)
