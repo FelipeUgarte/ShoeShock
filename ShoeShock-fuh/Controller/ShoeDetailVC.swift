@@ -60,4 +60,13 @@ class ShoeDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
         return SizeCollectionViewCell()
     }
+
+    @IBAction func addToBagButtonTapped(_ sender: UIButton) {
+
+        let alert = UIAlertController(title: "Shoe added to you bag", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "cancel", style: UIAlertAction.Style.default, handler: nil ))
+
+        self.present(alert, animated: true, completion: nil)
+
+    }
 }
