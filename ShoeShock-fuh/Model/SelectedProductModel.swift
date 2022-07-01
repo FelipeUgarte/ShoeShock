@@ -9,11 +9,11 @@ import Foundation
 
 class SelectedProductModel {
     
-    var item: Shoe
+    var item: ShoeModel
     var cuantity: Int
     var subtotal: Double
     
-    init(item: Shoe, cuantity: Int, subtotal: Double) {
+    init(item: ShoeModel, cuantity: Int, subtotal: Double) {
         self.item = item
         self.cuantity = cuantity
         self.subtotal = subtotal

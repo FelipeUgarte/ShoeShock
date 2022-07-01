@@ -21,7 +21,7 @@ class HeroBannerCell: UICollectionViewCell {
         self.layer.cornerRadius = 10
     }
     
-    func updateCell(shoes: Shoe) {
+    func updateCell(shoes: ShoeModel) {
         brand.text = shoes.brand
         name.text = shoes.name
         price.text = String(shoes.price)

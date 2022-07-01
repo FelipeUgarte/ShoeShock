@@ -11,10 +11,11 @@ class DataService {
     static let instance = DataService()
     
     private var shoes = [
-        Shoe(name: "Shoe1",
+        ShoeModel(name: "Shoe1",
              brand: "Nike",
-             price: 129.99,
+             price: 129.4499,
              shoeImage: "shoe1-puma",
+             shoeDescription: Constants.instance.shoeDescriptions,
              shoeAditionalImages: [
                 "shoe1-puma",
                 "shoe1-puma",
@@ -22,10 +23,11 @@ class DataService {
                 "shoe1-puma",
                 "shoe1-puma"
              ]),
-        Shoe(name: "Shoe2",
+        ShoeModel(name: "Shoe2",
              brand: "Nike",
              price: 129.99,
              shoeImage: "shoe2-weinbrenner",
+             shoeDescription: Constants.instance.shoeDescriptions,
              shoeAditionalImages: [
                 "shoe2-weinbrenner",
                 "shoe2-weinbrenner",
@@ -33,10 +35,11 @@ class DataService {
                 "shoe2-weinbrenner",
                 "shoe2-weinbrenner"
              ]),
-        Shoe(name: "Shoe3",
+        ShoeModel(name: "Shoe3",
              brand: "Nike",
              price: 129.99,
              shoeImage: "shoe3-under-armour",
+             shoeDescription: Constants.instance.shoeDescriptions,
              shoeAditionalImages: [
                 "shoe3-under-armour",
                 "shoe3-under-armour",
@@ -44,10 +47,11 @@ class DataService {
                 "shoe3-under-armour",
                 "shoe3-under-armour"
              ]),
-        Shoe(name: "Shoe4",
+        ShoeModel(name: "Shoe4",
              brand: "Nike",
              price: 129.99,
              shoeImage: "shoe4-power",
+             shoeDescription: Constants.instance.shoeDescriptions,
              shoeAditionalImages: [
                 "shoe4-power",
                 "shoe4-power",
@@ -66,20 +70,23 @@ class DataService {
     ]
     
     private var shoesListDetail = [
-        Shoe(name: "Shoe1",
+        ShoeModel(name: "Shoe1",
              brand: "Nike",
              price: 129.99,
-             shoeImage: "shoe1-puma", shoeAditionalImages: [
+             shoeImage: "shoe1-puma",
+             shoeDescription: Constants.instance.shoeDescriptions,
+             shoeAditionalImages: [
                 "shoe1-puma",
                 "shoe1-puma",
                 "shoe1-puma",
                 "shoe1-puma",
                 "shoe1-puma"
              ]),
-        Shoe(name: "Shoe2",
+        ShoeModel(name: "Shoe2",
              brand: "Nike",
              price: 129.99,
              shoeImage: "shoe2-weinbrenner",
+             shoeDescription: Constants.instance.shoeDescriptions,
             shoeAditionalImages: [
                 "shoe2-weinbrenner",
                 "shoe2-weinbrenner",
@@ -87,10 +94,11 @@ class DataService {
                 "shoe2-weinbrenner",
                 "shoe2-weinbrenner"
             ]),
-        Shoe(name: "Shoe3",
+        ShoeModel(name: "Shoe3",
              brand: "Nike",
              price: 129.99,
              shoeImage: "shoe3-under-armour",
+             shoeDescription: Constants.instance.shoeDescriptions,
             shoeAditionalImages: [
                 "shoe3-under-armour",
                 "shoe3-under-armour",
@@ -98,10 +106,11 @@ class DataService {
                 "shoe3-under-armour",
                 "shoe3-under-armour"
             ]),
-        Shoe(name: "Shoe4",
+        ShoeModel(name: "Shoe4",
              brand: "Nike",
              price: 129.99,
              shoeImage: "shoe4-power",
+             shoeDescription: Constants.instance.shoeDescriptions,
             shoeAditionalImages: [
                 "shoe4-power",
                 "shoe4-power",
@@ -120,8 +129,10 @@ class DataService {
         SizeModel(sizeNumber: "9.5"),
         SizeModel(sizeNumber: "10")
     ]
+
+    private var bag: MyBagModel = MyBagModel(product: [], totalCost: 0)
     
-    func getShoes() -> [Shoe] {
+    func getShoes() -> [ShoeModel] {
         return shoes
     }
     
@@ -129,11 +140,19 @@ class DataService {
         return brands
     }
     
-    func getMoreShoes() -> [Shoe] {
+    func getMoreShoes() -> [ShoeModel] {
         return shoesListDetail
     }
     
     func getSizes() -> [SizeModel] {
         return size
+    }
+
+    func updateBag(mybag: MyBagModel) {
+        self.bag = mybag
+    }
+
+    func getBag() -> MyBagModel {
+        return bag
     }
 }

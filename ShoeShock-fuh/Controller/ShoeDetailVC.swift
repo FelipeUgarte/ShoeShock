@@ -9,8 +9,8 @@ import UIKit
 
 class ShoeDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var smallShoesImages: UICollectionView!
-    @IBOutlet weak var sizes: UICollectionView!
+    @IBOutlet weak var smallShoesImagesCellectionView: UICollectionView!
+    @IBOutlet weak var sizesCellectionView: UICollectionView!
     
     @IBOutlet weak var largeShoeImage: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -22,15 +22,21 @@ class ShoeDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var usa: UILabel!
     @IBOutlet weak var addToBagBT: UIButton!
     
-    private(set) public var shoeToShow = Shoe(name: "", brand: "", price: 0, shoeImage: "", shoeAditionalImages: [""])
+    private(set) public var shoeToShow = ShoeModel(name: "", brand: "", price: 0, shoeImage: "", shoeDescription: "", shoeAditionalImages: [""])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        smallShoesImagesCellectionView.dataSource = self
+        smallShoesImagesCellectionView.delegate = self
+        sizesCellectionView.dataSource = self
+        sizesCellectionView.delegate = self
+
+
         largeShoeImage.image = UIImage(named: shoeToShow.shoeImage)
         name.text = shoeToShow.name
-        price.text = String(shoeToShow.price)
-        shoeDescription.text = "Description"
+        price.text = String.localizedStringWithFormat("$ %.2f", shoeToShow.price)
+        shoeDescription.text = shoeToShow.shoeDescription
 
         moreDetailTitle.text = "MORE DETAILS"
         sizeText.text = "Size"
@@ -42,23 +48,43 @@ class ShoeDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
         usa.textColor = .black
     }
     
-    func initShoes(shoe: Shoe) {
+    func initShoes(shoe: ShoeModel) {
         shoeToShow = shoe
         navigationItem.title = shoeToShow.name
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        DataService.instance.getSizes().count
+        if collectionView == sizesCellectionView {
+            print("Number of items sizes")
+            return DataService.instance.getSizes().count
+        } else if collectionView == smallShoesImagesCellectionView {
+            print("Number of items small images")
+            return shoeToShow.shoeAditionalImages.count
+        } else {
+            return 0
+        }
+
+
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StringSizeCell", for: indexPath) as? SizeCollectionViewCell {
-            let size = DataService.instance.getSizes()[indexPath.row]
-            cell.updateSizeCell(size: size)
-            return cell
+        if collectionView == sizesCellectionView {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SizeCell", for: indexPath) as? SizeCell {
+                let size = DataService.instance.getSizes()[indexPath.row]
+                cell.updateSizeCell(size: size)
+                return cell
+            }
+            return SizeCell()
+        } else if collectionView == smallShoesImagesCellectionView {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SmallImagesCell", for: indexPath) as? SmallImagesCell {
+                let smallImage = shoeToShow.shoeAditionalImages[indexPath.row]
+                cell.updateImageCell(imageName: smallImage)
+                return cell
+            }
+            return SmallImagesCell()
+        } else {
+            return SizeCell()
         }
-
-        return SizeCollectionViewCell()
     }
 
     @IBAction func addToBagButtonTapped(_ sender: UIButton) {

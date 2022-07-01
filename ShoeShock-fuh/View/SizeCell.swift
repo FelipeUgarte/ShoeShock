@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SizeCollectionViewCell: UICollectionViewCell {
+class SizeCell: UICollectionViewCell {
     
     @IBOutlet weak var sizeLabel: UILabel!
     

@@ -20,15 +20,15 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var new: UIButton!
     
 //    var selectedShoe = Shoe(name: "", brand: "", price: 0, shoeImage: "", shoeAditionalImages: [""])
-    var selectedShoe = [Shoe]()
+    var selectedShoe = [ShoeModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productCollectionView.dataSource = self
-        productCollectionView.delegate = self
         brandCollectionView.dataSource = self
         brandCollectionView.delegate = self
+        productCollectionView.dataSource = self
+        productCollectionView.delegate = self
         moreShoesCollectionView.dataSource = self
         moreShoesCollectionView.delegate = self
         
@@ -91,8 +91,8 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("** Preparing for segue")
         if let destination = segue.destination as? ShoeDetailVC {
-            assert(sender as? Shoe != nil)
-            destination.initShoes(shoe: sender as! Shoe)
+            assert(sender as? ShoeModel != nil)
+            destination.initShoes(shoe: sender as! ShoeModel)
         }
     }
 

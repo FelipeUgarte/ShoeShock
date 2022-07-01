@@ -7,19 +7,21 @@
 
 import Foundation
 
-class Shoe {
+class ShoeModel {
     private(set) public var id = UUID()
     private(set) public var name: String
     private(set) public var brand: String
     private(set) public var price: Double
     private(set) public var shoeImage: String
+    private(set) public var shoeDescription: String
     private(set) public var shoeAditionalImages: [String]
     
-    init(name: String, brand: String, price: Double, shoeImage: String, shoeAditionalImages: [String]) {
+    init(name: String, brand: String, price: Double, shoeImage: String, shoeDescription: String, shoeAditionalImages: [String]) {
         self.name = name
         self.brand = brand
         self.price = price
         self.shoeImage = shoeImage
+        self.shoeDescription = shoeDescription
         self.shoeAditionalImages = shoeAditionalImages
     }
 }
