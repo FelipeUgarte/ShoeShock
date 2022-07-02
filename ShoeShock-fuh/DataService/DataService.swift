@@ -9,7 +9,8 @@ import Foundation
 
 class DataService {
     static let instance = DataService()
-    
+
+    // MARK: - Shoes Properties
     private var shoes = [
         ShoeModel(name: "Shoe1",
              brand: "Nike",
@@ -130,8 +131,7 @@ class DataService {
         SizeModel(sizeNumber: "10")
     ]
 
-    private var bag: MyBagModel = MyBagModel(product: [], totalCost: 0)
-    
+    // MARK: - Shoes Methods
     func getShoes() -> [ShoeModel] {
         return shoes
     }
@@ -148,8 +148,16 @@ class DataService {
         return size
     }
 
-    func updateBag(mybag: MyBagModel) {
-        self.bag = mybag
+    // MARK: - MayBag
+    private var bag: MyBagModel = MyBagModel(product: [], totalCost: 0)
+
+    func addProductToBag(mybag: BagProductsModel) {
+        self.bag.bagProducts.append(mybag)
+        var calculatedCost = 0.0
+        for product in bag.bagProducts {
+            calculatedCost += Double(product.quantity) * product.price
+        }
+        self.bag.totalCost = calculatedCost
     }
 
     func getBag() -> MyBagModel {

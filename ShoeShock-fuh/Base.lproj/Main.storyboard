@@ -606,13 +606,101 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="562"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="8Do-mX-Lb1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="8Do-mX-Lb1" customClass="MyBagCell" customModule="ShoeShock_fuh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Do-mX-Lb1" id="a4n-cE-6JA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J55-fg-Dr9">
+                                                    <rect key="frame" x="36" y="44" width="100" height="100"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="rp0-ZO-9eb"/>
+                                                        <constraint firstAttribute="height" constant="100" id="vQA-c7-rq6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J02-ZM-soO">
+                                                    <rect key="frame" x="52" y="19" width="100" height="109"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="B54-sj-Bzs"/>
+                                                        <constraint firstAttribute="height" constant="100" id="XHy-yj-tPr"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jBB-ER-rvw">
+                                                    <rect key="frame" x="168" y="19" width="226" height="125"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyH-f5-hIG" userLabel="Name Label">
+                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="20.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$128.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofq-Fi-aZC" userLabel="Price Label">
+                                                            <rect key="frame" x="0.0" y="48" width="79" height="24"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZy-yC-lBs">
+                                                            <rect key="frame" x="0.0" y="94" width="130" height="31"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaD-oC-lSh" userLabel="decrease Button">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="31"/>
+                                                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="rz6-7n-LeO"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88u-xx-sVx" userLabel="Quantity">
+                                                                    <rect key="frame" x="40" y="0.0" width="50" height="31"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="Mgy-MW-vd9"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F35-Qx-zhn" userLabel="decrease Button">
+                                                                    <rect key="frame" x="90" y="0.0" width="40" height="31"/>
+                                                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="Va3-pO-kAP"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J02-ZM-soO" firstAttribute="top" secondItem="a4n-cE-6JA" secondAttribute="topMargin" constant="8" id="Csp-nd-aLY"/>
+                                                <constraint firstItem="J55-fg-Dr9" firstAttribute="leading" secondItem="a4n-cE-6JA" secondAttribute="leadingMargin" constant="16" id="Hld-tM-fkp"/>
+                                                <constraint firstItem="J55-fg-Dr9" firstAttribute="bottom" secondItem="a4n-cE-6JA" secondAttribute="bottomMargin" constant="8" id="IBV-vx-sy0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jBB-ER-rvw" secondAttribute="trailing" id="LOl-sh-jQM"/>
+                                                <constraint firstItem="jBB-ER-rvw" firstAttribute="bottom" secondItem="J55-fg-Dr9" secondAttribute="bottom" id="OYS-4J-MnX"/>
+                                                <constraint firstItem="J55-fg-Dr9" firstAttribute="top" secondItem="J02-ZM-soO" secondAttribute="bottom" constant="-84" id="RhL-5b-tIb"/>
+                                                <constraint firstItem="jBB-ER-rvw" firstAttribute="top" secondItem="J02-ZM-soO" secondAttribute="top" id="Vsw-C9-ZZm"/>
+                                                <constraint firstItem="J02-ZM-soO" firstAttribute="leading" secondItem="J55-fg-Dr9" secondAttribute="trailing" constant="-84" id="bMj-aB-SdZ"/>
+                                                <constraint firstItem="jBB-ER-rvw" firstAttribute="leading" secondItem="J02-ZM-soO" secondAttribute="trailing" constant="16" id="qPz-tS-fkr"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="decreaseButtton" destination="NaD-oC-lSh" id="bfD-LA-glP"/>
+                                            <outlet property="increaseButton" destination="F35-Qx-zhn" id="ktD-CH-6fx"/>
+                                            <outlet property="quantityLabel" destination="88u-xx-sVx" id="qEm-7r-Mj9"/>
+                                            <outlet property="shoeImageImageView" destination="J02-ZM-soO" id="St3-fC-kds"/>
+                                            <outlet property="shoeNameLabel" destination="PyH-f5-hIG" id="b8N-Fy-nbw"/>
+                                            <outlet property="shoePrice" destination="ofq-Fi-aZC" id="DB3-Y2-OJf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -631,6 +719,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Bag" largeTitleDisplayMode="always" id="ncm-Uj-X9X"/>
                     <connections>
+                        <outlet property="bagItemsTableView" destination="fOC-NJ-d6D" id="1Qb-cW-6L5"/>
                         <outlet property="nextBT" destination="rmY-ER-6Vm" id="QGz-78-WdS"/>
                         <outlet property="totalNumberLB" destination="pdF-8H-AxV" id="VXx-oN-cue"/>
                         <outlet property="totalTextLB" destination="LoC-g3-0AV" id="AGk-rj-4ga"/>
@@ -669,6 +758,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -21,11 +21,13 @@ class MyBagModel {
 class BagProductsModel {
     private(set) public var id = UUID()
     private(set) public var name: String
+    private(set) public var image: String
     private(set) public var price: Double
     private(set) public var quantity: Int
 
-    init(name: String, price: Double, quantity: Int) {
+    init(name: String, image: String, price: Double, quantity: Int) {
         self.name = name
+        self.image = image
         self.price = price
         self.quantity = quantity
     }
