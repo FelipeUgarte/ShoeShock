@@ -13,7 +13,6 @@ class SmallImagesCell: UICollectionViewCell {
 
     func updateImageCell(imageName: String) {
         smallShoeImage.image = UIImage(named: imageName)
-        print("*** imageName: \(imageName)")
     }
 
 }

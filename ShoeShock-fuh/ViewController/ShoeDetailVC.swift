@@ -22,7 +22,7 @@ class ShoeDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var usa: UILabel!
     @IBOutlet weak var addToBagBT: UIButton!
     
-    private(set) public var shoeToShow = ShoeModel(name: "", brand: "", price: 0, shoeImage: "", shoeDescription: "", shoeAditionalImages: [""])
+    private(set) public var shoeToShow = ShoeModel(name: "", brand: "", price: 0, shoeImage: "", shoeDescription: "", shoeAditionalImages: [""], like: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,9 +90,11 @@ class ShoeDetailVC: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func addToBagButtonTapped(_ sender: UIButton) {
 
         let alert = UIAlertController(title: "Shoe added to you bag", message: nil, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "cancel", style: UIAlertAction.Style.default, handler: nil ))
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: { _ in
+            self.performSegue(withIdentifier: "MyBagVCSegue", sender: self)
+        } ))
 
         self.present(alert, animated: true, completion: nil)
-
+        DataService.instance.addProductToBag(shoeId: shoeToShow.id)
     }
 }

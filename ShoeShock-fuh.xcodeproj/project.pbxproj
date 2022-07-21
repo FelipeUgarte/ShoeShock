@@ -22,13 +22,14 @@
 		0CBA8D682841634D006450ED /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA8D672841634D006450ED /* DataService.swift */; };
 		0CCA89C528402EB800657C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C428402EB800657C00 /* AppDelegate.swift */; };
 		0CCA89C728402EB800657C00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C628402EB800657C00 /* SceneDelegate.swift */; };
-		0CCA89C928402EB800657C00 /* ShoeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C828402EB800657C00 /* ShoeSelector.swift */; };
+		0CCA89C928402EB800657C00 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA89C828402EB800657C00 /* HomeVC.swift */; };
 		0CCA89CC28402EB800657C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCA89CA28402EB800657C00 /* Main.storyboard */; };
 		0CCA89CE28402EBA00657C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CCA89CD28402EBA00657C00 /* Assets.xcassets */; };
 		0CCA89D128402EBA00657C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCA89CF28402EBA00657C00 /* LaunchScreen.storyboard */; };
 		0CD625CA286E595000084EB9 /* MyBagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD625C9286E595000084EB9 /* MyBagModel.swift */; };
 		0CD625CE286E5D4200084EB9 /* MyBagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD625CD286E5D4200084EB9 /* MyBagVC.swift */; };
 		0CD625D02870EDE000084EB9 /* MyBagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD625CF2870EDE000084EB9 /* MyBagCell.swift */; };
+		0CDD4A9528837FA100AC2290 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD4A9428837FA100AC2290 /* CongratulationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +49,7 @@
 		0CCA89C128402EB800657C00 /* ShoeShock-fuh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShoeShock-fuh.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCA89C428402EB800657C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CCA89C628402EB800657C00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CCA89C828402EB800657C00 /* ShoeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeSelector.swift; sourceTree = "<group>"; };
+		0CCA89C828402EB800657C00 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		0CCA89CB28402EB800657C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CCA89CD28402EBA00657C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CCA89D028402EBA00657C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		0CD625C9286E595000084EB9 /* MyBagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagModel.swift; sourceTree = "<group>"; };
 		0CD625CD286E5D4200084EB9 /* MyBagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagVC.swift; sourceTree = "<group>"; };
 		0CD625CF2870EDE000084EB9 /* MyBagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagCell.swift; sourceTree = "<group>"; };
+		0CDD4A9428837FA100AC2290 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C16D92E2875384700AAC625 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0CCA89C828402EB800657C00 /* HomeVC.swift */,
+				0C55C59B2852B5F2000E1752 /* ShoeDetailVC.swift */,
+				0CD625CD286E5D4200084EB9 /* MyBagVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		0C1D4FB72867DDAF00A082B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +120,7 @@
 				0CCA89C628402EB800657C00 /* SceneDelegate.swift */,
 				0CCA89CA28402EB800657C00 /* Main.storyboard */,
 				0CCA89DA28402F5E00657C00 /* View */,
-				0CCA89D928402F4D00657C00 /* Controller */,
+				0C16D92E2875384700AAC625 /* ViewController */,
 				0CCA89D828402F4500657C00 /* Model */,
 				0CBA8D6628416336006450ED /* DataService */,
 				0C1D4FB72867DDAF00A082B4 /* Resources */,
@@ -132,16 +144,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0CCA89D928402F4D00657C00 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0CCA89C828402EB800657C00 /* ShoeSelector.swift */,
-				0C55C59B2852B5F2000E1752 /* ShoeDetailVC.swift */,
-				0CD625CD286E5D4200084EB9 /* MyBagVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		0CCA89DA28402F5E00657C00 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +153,7 @@
 				0CA995C82847CC9100F828C6 /* SizeCell.swift */,
 				0C1D4FBA2868A69400A082B4 /* SmallImagesCell.swift */,
 				0CD625CF2870EDE000084EB9 /* MyBagCell.swift */,
+				0CDD4A9428837FA100AC2290 /* CongratulationsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,7 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CCA89C928402EB800657C00 /* ShoeSelector.swift in Sources */,
+				0CDD4A9528837FA100AC2290 /* CongratulationsView.swift in Sources */,
+				0CCA89C928402EB800657C00 /* HomeVC.swift in Sources */,
 				0C83006F284566C500D37949 /* BrandsModel.swift in Sources */,
 				0CA995CB2847CD6700F828C6 /* SizeModel.swift in Sources */,
 				0CD625CE286E5D4200084EB9 /* MyBagVC.swift in Sources */,

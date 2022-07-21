@@ -14,12 +14,43 @@ class MyBagCell: UITableViewCell {
     @IBOutlet weak var shoePrice: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var increaseButton: UIButton!
-    @IBOutlet weak var decreaseButtton: UIButton!
+    @IBOutlet weak var decreaseButton: UIButton!
+    private var cornerRadiusValue: CGFloat = 8
+    private var quantity = 0
+    private var cellIndex = 0
 
-    func updateCell(shoe: BagProductsModel) {
+    override func awakeFromNib() {
+        increaseButton.layer.cornerRadius = cornerRadiusValue
+        decreaseButton.layer.cornerRadius = cornerRadiusValue
+    }
+
+    func updateCell(shoe: BagProductsModel, cellIndex: Int) {
         shoeImageImageView.image = UIImage(named: shoe.image)
         shoeNameLabel.text = shoe.name
-        shoePrice.text = String(shoe.price)
+        shoePrice.text = String("$ \(shoe.price)")
         quantityLabel.text = String(shoe.quantity)
+        self.quantity = shoe.quantity
+        self.cellIndex = cellIndex
+        print("Quantity pobtained: \(shoe.quantity)")
+    }
+
+    @IBAction func increaseBT(_ sender: Any) {
+        self.quantity += 1
+        quantityLabel.text = String(quantity)
+        DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
+        MyBagVC.updateTotal()
+    }
+
+    @IBAction func decreaseBT(_ sender: Any) {
+        if quantity > 1 {
+            self.quantity -= 1
+            print("Quantity: \(quantity)")
+            quantityLabel.text = String(quantity)
+            DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
+        } else {
+            print("Remove product: \(cellIndex)")
+            quantityLabel.text = "0"
+            DataService.instance.removeShoe(cellIndex)
+        }
     }
 }

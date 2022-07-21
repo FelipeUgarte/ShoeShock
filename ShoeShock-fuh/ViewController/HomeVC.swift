@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     // CollectionsViews
     @IBOutlet weak var brandCollectionView: UICollectionView!
     @IBOutlet weak var productCollectionView: UICollectionView!
@@ -20,8 +20,9 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var new: UIButton!
     
 //    var selectedShoe = Shoe(name: "", brand: "", price: 0, shoeImage: "", shoeAditionalImages: [""])
-    var selectedShoe = [ShoeModel]()
-    
+    private(set) public var shoeToShow = ShoeModel(name: "", brand: "", price: 0, shoeImage: "", shoeDescription: "", shoeAditionalImages: [""], like: false)
+//    private var indexPath
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +37,6 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
         upcomingBT.titleLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         featured.titleLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         new.titleLabel?.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-        
     }
 
         // MARK: - Table view data source
@@ -83,7 +83,7 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == productCollectionView {
             let cell = DataService.instance.getShoes()[indexPath.row]
-            print("** Selected Show")
+            print("** Selected Shoe")
             performSegue(withIdentifier: "ShoeDetailSegue", sender: cell)
         }
     }
@@ -94,6 +94,28 @@ class ShoeSelector: UIViewController, UICollectionViewDelegate, UICollectionView
             assert(sender as? ShoeModel != nil)
             destination.initShoes(shoe: sender as! ShoeModel)
         }
+    }
+
+    func likeToggle(shoeId: UUID) {
+        DataService.instance.likeShoeToggle(shoeId: shoeId)
+        addProduct(shoeId: shoeId)
+        showAlert()
+
+    }
+
+    private func addProduct(shoeId: UUID) {
+        DataService.instance.addProductToBag(shoeId: shoeId)
+    }
+
+    private func showAlert() {
+        let alert = UIAlertController(title: "Shoe added to you bag", message: nil, preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "close", style: UIAlertAction.Style.cancel))
+        alert.addAction(UIAlertAction(title: "Open bag", style: UIAlertAction.Style.default, handler: { _ in
+            self.performSegue(withIdentifier: "MyBagVCSegue", sender: self)
+        } ))
+
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

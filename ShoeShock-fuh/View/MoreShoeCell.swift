@@ -23,7 +23,7 @@ class MoreShoeCell: UICollectionViewCell {
     func getMoreShoes(shoe: ShoeModel) {
         nameMoreShoe.text = shoe.name
         brandMoreShoe.text = shoe.brand
-        priceMoreShoe.text = String(shoe.price)
+        priceMoreShoe.text = String("$ \(shoe.price)")
         shoeImageMoreShoe.image = UIImage(named: shoe.shoeImage)
     }
     
