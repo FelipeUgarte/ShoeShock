@@ -38,7 +38,7 @@ class MyBagCell: UITableViewCell {
         self.quantity += 1
         quantityLabel.text = String(quantity)
         DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
-        MyBagVC.updateTotal()
+//        MyBagVC.updateTotal()
     }
 
     @IBAction func decreaseBT(_ sender: Any) {
