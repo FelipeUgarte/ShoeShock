@@ -69,10 +69,4 @@ class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }))
         self.navigationController?.pushViewController(hostingController, animated: true)
     }
-
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("1")
-//        updateTotal()
-//    }
-
 }

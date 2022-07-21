@@ -47,10 +47,12 @@ class MyBagCell: UITableViewCell {
             print("Quantity: \(quantity)")
             quantityLabel.text = String(quantity)
             DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
+//            MyBagVC.updateTotal()
         } else {
             print("Remove product: \(cellIndex)")
             quantityLabel.text = "0"
             DataService.instance.removeShoe(cellIndex)
+//            MyBagVC.updateTotal()
         }
     }
 }
