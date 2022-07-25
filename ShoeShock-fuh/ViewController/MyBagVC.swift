@@ -26,7 +26,6 @@ class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Upd
         bagItemsTableView.delegate = self
 
         getBag()
-        updateTotal()
     }
 
     // MARK: - Methods
@@ -47,18 +46,13 @@ class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Upd
                 }
             }, receiveValue: { [weak self] updatedBag in
                 self?.myBag = updatedBag
-                //                self?.updateTotalLabel()
                 self?.bagItemsTableView.reloadData()
-                self?.updateTotal()
+                self?.updateTotalLabel()
             })
     }
 
-    private func updateTotalLabel() {
+    func updateTotalLabel() {
         totalNumberLB.text = String("$ \(myBag.totalCost)")
-    }
-
-    func updateTotal() {
-        updateTotalLabel()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

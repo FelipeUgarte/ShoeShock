@@ -9,6 +9,6 @@ import Foundation
 
 protocol UpdateBagDelegate {
 
-    func updateTotal()
+    func updateTotalLabel()
 
 }

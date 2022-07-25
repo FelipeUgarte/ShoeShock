@@ -40,7 +40,7 @@ class MyBagCell: UITableViewCell {
         self.quantity += 1
         quantityLabel.text = String(quantity)
         DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
-        delegate?.updateTotal()
+        delegate?.updateTotalLabel()
 
     }
 
@@ -50,12 +50,12 @@ class MyBagCell: UITableViewCell {
             print("Quantity: \(quantity)")
             quantityLabel.text = String(quantity)
             DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
-            delegate?.updateTotal()
+            delegate?.updateTotalLabel()
         } else {
             print("Remove product: \(cellIndex)")
             quantityLabel.text = "0"
             DataService.instance.removeShoe(cellIndex)
-            delegate?.updateTotal()
+            delegate?.updateTotalLabel()
 
         }
     }
