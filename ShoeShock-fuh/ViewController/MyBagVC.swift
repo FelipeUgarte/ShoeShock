@@ -51,7 +51,6 @@ class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Upd
                 self?.bagItemsTableView.reloadData()
                 self?.updateTotal()
             })
-
     }
 
     private func updateTotalLabel() {
