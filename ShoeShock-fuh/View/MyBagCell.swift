@@ -15,9 +15,11 @@ class MyBagCell: UITableViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var increaseButton: UIButton!
     @IBOutlet weak var decreaseButton: UIButton!
+
     private var cornerRadiusValue: CGFloat = 8
     private var quantity = 0
     private var cellIndex = 0
+    private var delegate: UpdateBagDelegate?
 
     override func awakeFromNib() {
         increaseButton.layer.cornerRadius = cornerRadiusValue
@@ -38,7 +40,8 @@ class MyBagCell: UITableViewCell {
         self.quantity += 1
         quantityLabel.text = String(quantity)
         DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
-//        MyBagVC.updateTotal()
+        delegate?.updateTotal()
+
     }
 
     @IBAction func decreaseBT(_ sender: Any) {
@@ -47,12 +50,13 @@ class MyBagCell: UITableViewCell {
             print("Quantity: \(quantity)")
             quantityLabel.text = String(quantity)
             DataService.instance.changeQuantity(newQuantity: quantity, product: cellIndex)
-//            MyBagVC.updateTotal()
+            delegate?.updateTotal()
         } else {
             print("Remove product: \(cellIndex)")
             quantityLabel.text = "0"
             DataService.instance.removeShoe(cellIndex)
-//            MyBagVC.updateTotal()
+            delegate?.updateTotal()
+
         }
     }
 }

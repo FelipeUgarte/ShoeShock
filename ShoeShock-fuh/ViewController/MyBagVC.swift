@@ -7,8 +7,9 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
-class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UpdateBagDelegate {
 
     @IBOutlet weak var bagItemsTableView: UITableView!
     @IBOutlet weak var itemCountLB: UILabel!
@@ -16,14 +17,15 @@ class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var totalNumberLB: UILabel!
     @IBOutlet weak var nextBT: UIButton!
 
-    var myBag = MyBagModel(product: [BagProductsModel(id: UUID(), name: "", image: "", price: 0, quantity: 0)], totalCost: 0)
+    var myBag = MyBagModel(product: [], totalCost: 0)
+    var myBagObserver: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         bagItemsTableView.dataSource = self
         bagItemsTableView.delegate = self
 
+        getBag()
         updateTotal()
     }
 
@@ -34,7 +36,21 @@ class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     private func getBag() {
-        self.myBag = DataService.instance.getBag()
+        self.myBagObserver = DataService.instance.getBag()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("Finish")
+                case .failure(let error):
+                    print(error)
+                }
+            }, receiveValue: { [weak self] updatedBag in
+                self?.myBag = updatedBag
+                //                self?.updateTotalLabel()
+                self?.bagItemsTableView.reloadData()
+                self?.updateTotal()
+            })
 
     }
 
@@ -43,7 +59,6 @@ class MyBagVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func updateTotal() {
-        getBag()
         updateTotalLabel()
     }
 

@@ -30,6 +30,7 @@
 		0CD625CE286E5D4200084EB9 /* MyBagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD625CD286E5D4200084EB9 /* MyBagVC.swift */; };
 		0CD625D02870EDE000084EB9 /* MyBagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD625CF2870EDE000084EB9 /* MyBagCell.swift */; };
 		0CDD4A9528837FA100AC2290 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDD4A9428837FA100AC2290 /* CongratulationsView.swift */; };
+		0CFF6B09288E2A5B003B4B30 /* MyBagDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF6B08288E2A5B003B4B30 /* MyBagDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		0CD625CD286E5D4200084EB9 /* MyBagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagVC.swift; sourceTree = "<group>"; };
 		0CD625CF2870EDE000084EB9 /* MyBagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagCell.swift; sourceTree = "<group>"; };
 		0CDD4A9428837FA100AC2290 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
+		0CFF6B08288E2A5B003B4B30 /* MyBagDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				0C16D92E2875384700AAC625 /* ViewController */,
 				0CCA89D828402F4500657C00 /* Model */,
 				0CBA8D6628416336006450ED /* DataService */,
+				0CFF6B07288E2A41003B4B30 /* Delegates */,
 				0C1D4FB72867DDAF00A082B4 /* Resources */,
 				0CCA89CD28402EBA00657C00 /* Assets.xcassets */,
 				0CCA89CF28402EBA00657C00 /* LaunchScreen.storyboard */,
@@ -156,6 +159,14 @@
 				0CDD4A9428837FA100AC2290 /* CongratulationsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0CFF6B07288E2A41003B4B30 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0CFF6B08288E2A5B003B4B30 /* MyBagDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 				0CA995CB2847CD6700F828C6 /* SizeModel.swift in Sources */,
 				0CD625CE286E5D4200084EB9 /* MyBagVC.swift in Sources */,
 				0CBA8D63284142F3006450ED /* SelectedProductModel.swift in Sources */,
+				0CFF6B09288E2A5B003B4B30 /* MyBagDelegate.swift in Sources */,
 				0CCA89C528402EB800657C00 /* AppDelegate.swift in Sources */,
 				0C1D4FB92867DDC700A082B4 /* Constants.swift in Sources */,
 				0CBA8D6128414228006450ED /* ShoeModel.swift in Sources */,

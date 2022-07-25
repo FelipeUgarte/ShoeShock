@@ -168,8 +168,12 @@ class DataService {
     // MARK: - MayBag
     private var bag: MyBagModel = MyBagModel(product: [], totalCost: 0)
 
-    func getBag() -> MyBagModel {
-        return bag
+    func getBag() -> Future<MyBagModel, Error> {
+        return Future { send in
+            DispatchQueue.main.async {
+                send(.success(self.bag))
+            }
+        }
     }
 
 
